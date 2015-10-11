@@ -60,10 +60,12 @@ function ajax_qsearch(){
     print '<ul>';
     $counter = 0;
     foreach($data as $id => $title){
-        if (useHeading('navigation')) {
+        $ns = getNS($id);
+        if (useHeading('with_path')) {
+            $name = $title . shorten(' ['.$ns.']',30);
+        } else if (useHeading('navigation')) {
             $name = $title;
         } else {
-            $ns = getNS($id);
             if($ns){
                 $name = noNS($id).' ('.$ns.')';
             }else{
