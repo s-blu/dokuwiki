@@ -313,7 +313,11 @@ function useHeading($linktype) {
     if (is_null($useHeading)) {
         global $conf;
 
+        if (!empty($conf['useheading_with_path'])) {
+            $useHeading['with_path'] = true;
+        }
         if (!empty($conf['useheading'])) {
+            
             switch ($conf['useheading']) {
                 case 'content':
                     $useHeading['content'] = true;

@@ -44,7 +44,7 @@ function ajax_qsearch(){
     global $lang;
     global $INPUT;
 
-    $maxnumbersuggestions = 50;
+    $maxnumbersuggestions = 15;
 
     $query = $INPUT->post->str('q');
     if(empty($query)) $query = $INPUT->get->str('q');
@@ -61,10 +61,10 @@ function ajax_qsearch(){
     $counter = 0;
     foreach($data as $id => $title){
         $ns = getNS($id);
-        if (useHeading('with_path')) {
-            $name = $title . shorten(' ['.$ns.']',30);
-        } else if (useHeading('navigation')) {
             $name = $title;
+             if (useHeading('with_path')) {
+                $name = $name . shorten(' ['.$ns.']',20);
+             }
         } else {
             if($ns){
                 $name = noNS($id).' ('.$ns.')';
