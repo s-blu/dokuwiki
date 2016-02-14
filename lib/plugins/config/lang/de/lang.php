@@ -77,6 +77,7 @@ $lang['maxseclevel']           = 'Abschnitte bis zu dieser Stufe einzeln editier
 $lang['camelcase']             = 'CamelCase-Verlinkungen verwenden';
 $lang['deaccent']              = 'Seitennamen bereinigen';
 $lang['useheading']            = 'Erste Überschrift als Seitennamen verwenden';
+$lang['useheading_with_path']  = 'Suchergebnisse mit Pfaden anzeigen';
 $lang['sneaky_index']          = 'Standardmäßig zeigt DokuWiki alle Namensräume in der Übersicht. Wenn diese Option aktiviert wird, werden alle Namensräume, für die der Benutzer keine Lese-Rechte hat, nicht angezeigt. Dies kann unter Umständen dazu führen, das lesbare Unter-Namensräume nicht angezeigt werden und macht die Übersicht evtl. unbrauchbar in Kombination mit bestimmten ACL Einstellungen.';
 $lang['hidepages']             = 'Seiten verstecken (Regulärer Ausdruck)';
 $lang['useacl']                = 'Zugangskontrolle verwenden';

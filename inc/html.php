@@ -387,11 +387,14 @@ function html_search(){
         print '<h3>'.$lang['quickhits'].':</h3>';
         print '<ul class="search_quickhits">';
         foreach($data as $id => $title){
+            $ns = getNS($id);
             print '<li> ';
             if (useHeading('navigation')) {
                 $name = $title;
-            }else{
-                $ns = getNS($id);
+                if (useHeading('with_path')) {
+                    $name = $name . shorten(' ['.p_get_first_heading($ns).']',30);
+                }
+            }else
                 if($ns){
                     $name = shorten(noNS($id), ' ('.$ns.')',30);
                 }else{

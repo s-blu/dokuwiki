@@ -124,6 +124,7 @@ $meta['maxseclevel'] = array('multichoice','_choices' => array(0,1,2,3,4,5)); //
 $meta['camelcase']   = array('onoff','_caution' => 'warning');
 $meta['deaccent']    = array('multichoice','_choices' => array(0,1,2),'_caution' => 'warning');
 $meta['useheading']  = array('multichoice','_choices' => array(0,'navigation','content',1));
+$meta['useheading_with_path'] = array('onoff');
 $meta['sneaky_index'] = array('onoff');
 $meta['hidepages']   = array('regex');
 

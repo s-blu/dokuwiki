@@ -65,8 +65,11 @@ function ajax_qsearch(){
         } else {
             $ns = getNS($id);
             if($ns){
-                $name = noNS($id).' ('.$ns.')';
-            }else{
+                /* Displays the Header of the Namespace-Page or of namespace:start as the Name of the NS */
+                $ns_name = p_get_first_heading(getNS($id));
+                if(!$ns_name) $ns_name = p_get_first_heading(getNS($id). ':start');
+                $name = shorten(' ['.$ns_name.']',30);
+            } else {
                 $name = $id;
             }
         }
