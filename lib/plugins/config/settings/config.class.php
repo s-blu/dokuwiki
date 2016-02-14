@@ -101,7 +101,12 @@ if (!class_exists('configuration')) {
                     }
 
                     $this->setting[$key] = new $class($key,$param);
-                    $this->setting[$key]->initialize($default[$key],$local[$key],$protected[$key]);
+
+                    $d = array_key_exists($key, $default) ? $default[$key] : null;
+                    $l = array_key_exists($key, $local) ? $local[$key] : null;
+                    $p = array_key_exists($key, $protected) ? $protected[$key] : null;
+
+                    $this->setting[$key]->initialize($d,$l,$p);
                 }
 
                 $this->_loaded = true;
@@ -1219,7 +1224,7 @@ if (!class_exists('setting_multicheckbox')) {
          * Build html for label and input of setting
          *
          * @param DokuWiki_Plugin $plugin object of config plugin
-         * @param bool            $echo   true: show inputted value, when error occurred, otherwise the stored setting
+         * @param bool            $echo   true: show input value, when error occurred, otherwise the stored setting
          * @return string[] with content array(string $label_html, string $input_html)
          */
         function html(&$plugin, $echo=false) {
